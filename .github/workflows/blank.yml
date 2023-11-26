@@ -31,10 +31,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: Chande directory
+        run: "$CI_PROJECT_DIR/client"
       - name: Checkout
         uses: actions/checkout@v4
-      -name: C
-        run: "$CI_PROJECT_DIR/client"
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
