@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  client:
+    container_name: orderbook
+    restart: unless-stopped
+    build: ./client
+    networks:
+      - user-defined
+    ports:
+      - '4000:4000'
+
+  server:
+    container_name: wss
+    restart: unless-stopped
+    build: ./server
+    networks:
+      - user-defined
+    ports:
+      - '8181:8181'
+
+networks:
+    user-defined:
+        driver: bridge
+        name: 'user-defined'
