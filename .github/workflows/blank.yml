@@ -30,9 +30,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client
     steps:
-      - name: Chande directory
-        run: cd "$CI_PROJECT_DIR/client"
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up Node
