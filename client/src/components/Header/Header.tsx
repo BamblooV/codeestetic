@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import './header.css'
+import './Header.css'
 import { useAppDispatch, useAppSelector } from '../../redux/store'
 import { showBoth, showBids, showAsks, setPrecision, selectPrecision } from '../../redux/features/OrdersSlice/OrdersSlice'
 import classNames from 'classnames'
