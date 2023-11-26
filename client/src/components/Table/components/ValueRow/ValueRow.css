@@ -1,0 +1,23 @@
+.order-price {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 0px 16px;
+  height: 34px;
+  flex-shrink: 0;
+  color: rgb(255, 255, 255);
+}
+
+.order-price-green {
+  color: rgb(150, 213, 142);
+}
+
+.order-price-red {
+  color: rgb(255, 150, 142);
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+}

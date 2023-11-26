@@ -1,0 +1,24 @@
+.table-header-row {
+  color: rgba(255, 255, 255, 0.45);
+  display: flex;
+}
+
+.table-header-cell {
+  flex: 0 0 33.3333%;
+  min-height: auto;
+  padding-top: 2px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  text-align: right;
+
+  display: flex;
+  align-items: center;
+}
+
+.table-header-cell:first-child {
+  text-align: left;
+}
+
+.table-header-title {
+  flex: 1 1 auto;
+}
