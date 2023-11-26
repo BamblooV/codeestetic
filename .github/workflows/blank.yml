@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Chande directory
-        run: "$CI_PROJECT_DIR/client"
+        run: cd "$CI_PROJECT_DIR/client"
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up Node
