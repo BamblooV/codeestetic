@@ -10,7 +10,7 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-  
+
 # Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -31,6 +31,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: Change directory
+        run: cd client
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up Node
@@ -38,8 +40,7 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-      - name: Change directory
-        run: cd client
+
       - name: Install dependencies
         run: npm install
       - name: Build
