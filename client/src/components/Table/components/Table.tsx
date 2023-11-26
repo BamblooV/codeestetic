@@ -22,10 +22,22 @@ const Table = () => {
   }, [dispatch])
 
   useEffect(() => {
-    const observer = { onSubscribe: processData, onMessage: processData }
-    imitator.subscribe(observer)
+    console.log(import.meta.env.VITE_WS_URL)
+    if (import.meta.env.VITE_WS_URL) {
+      const ws = new WebSocket(import.meta.env.VITE_WS_URL)
+      ws.onmessage = event => {
+        const data = JSON.parse(event.data)
 
-    return () => imitator.unSubscribe(observer)
+        processData(data);
+      }
+
+      return () => ws.close()
+    } else {
+      const observer = { onSubscribe: processData, onMessage: processData }
+      imitator.subscribe(observer)
+
+      return () => imitator.unSubscribe(observer)
+    }
   }, [processData])
 
   return (
