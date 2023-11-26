@@ -1,0 +1,53 @@
+.controllers {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0px 16px 12px;
+}
+
+.view-controllers {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.view-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.view-btn svg {
+  opacity: 0.3;
+  transition: opacity 300ms ease 0s;
+}
+
+.view-btn:hover svg {
+  opacity: 0.6;
+}
+
+.view-btn.active svg {
+  opacity: 1;
+}
+
+.select {
+  margin-left: auto;
+  outline: none;
+
+  background-color: transparent;
+  color: #fff;
+  border: none;
+}
+
+.select option {
+  padding: 6px 16px;
+  background-color: rgb(25, 25, 25);
+  transition: background-color 300ms ease 0s;
+}
